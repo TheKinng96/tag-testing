@@ -1,16 +1,8 @@
 (function () {
   let temp = document.createElement('div')
-  temp.innerHTML = `<script type="text/javascript" async>
-            let price = window.Shopify.checkout.subtotal_price;
-            /* <![CDATA[ */
-            var yahoo_conversion_id = 1001260891;
-            var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
-            var yahoo_conversion_value = price;
-            /* ]]> */
+  temp.innerHTML = `<script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
         </script>
-        <script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
-        </script>
-        <script>
+        <script type="text/javascript" async>
             (function () {
                 let img = document.createElement('img')
                 const head = document.head
@@ -19,6 +11,12 @@
                 img.height = '1'
                 img.border = "0"
                 document.getElementsByTagName("head")[0].appendChild(img)
+                
+                /* <![CDATA[ */
+                var yahoo_conversion_id = 1001260891;
+                var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
+                var yahoo_conversion_value = window.Shopify.checkout.subtotal_price;
+                /* ]]> */
             })()
         </script>`
   let head = document.head
