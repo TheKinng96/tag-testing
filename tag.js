@@ -1,6 +1,6 @@
 (function () {
   let temp = document.createElement('div')
-  temp.innerHTML = `<script type="text/javascript">
+  temp.innerHTML = `<script>
             window.addEventListener('load', () => {
                 window.Shopify.checkout.subtotal_price;
                 /* <![CDATA[ */
