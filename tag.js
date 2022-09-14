@@ -1,15 +1,11 @@
 (function () {
   let temp = document.createElement('div')
   temp.innerHTML = `<script type="text/javascript" async>
-          window.addEventListener('load', () => {
-            let price = window.Shopify.checkout.subtotal_price;
-            console.log(window.Shopify.checkout.subtotal_price);
-            const docu = new DOMParser().parseFromString("<xml></xml>", "application/xml");
-            
-            let section = "var yahoo_conversion_id = 1001260891; var yahoo_conversion_label = 'swEjCI_M5doDEJqp5_Io'; var yahoo_conversion_value = " + window.Shopify.checkout.subtotal_price + ";";
-            const cdata = docu.createCDATASection(section);
-            docu.querySelector("xml").appendChild(cdata);
-          });
+          //<![CDATA[
+            var yahoo_conversion_id = 1001260891;
+            var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
+            var yahoo_conversion_value = window.Shopify.checkout.subtotal_price;
+          // ]]>
         </script>
         <script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
         </script>
