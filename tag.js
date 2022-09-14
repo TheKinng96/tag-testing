@@ -1,14 +1,16 @@
 (function () {
   let temp = document.createElement('div')
   temp.innerHTML = `<script type="text/javascript" async>
-          let price = window.Shopify.checkout.subtotal_price;
-          const docu = new DOMParser().parseFromString("<xml></xml>", "application/xml");
-          const cdata = docu.createCDATASection(\`
-              var yahoo_conversion_id = 1001260891;
-              var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
-              var yahoo_conversion_value = ${price};
-          \`);
-          docu.querySelector("xml").appendChild(cdata);
+          window.addEventListener('load', () => {
+            let price = window.Shopify.checkout.subtotal_price;
+            const docu = new DOMParser().parseFromString("<xml></xml>", "application/xml");
+            const cdata = docu.createCDATASection(\`
+                var yahoo_conversion_id = 1001260891;
+                var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
+                var yahoo_conversion_value = ${price};
+            \`);
+            docu.querySelector("xml").appendChild(cdata);
+          });
         </script>
         <script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
         </script>
