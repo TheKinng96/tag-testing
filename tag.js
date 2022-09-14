@@ -1,11 +1,11 @@
 (function () {
   let temp = document.createElement('div')
   temp.innerHTML = `<script type="text/javascript" async>
-            console.log(window.Shopify.checkout.subtotal_price);
+            let price = window.Shopify.checkout.subtotal_price;
             /* <![CDATA[ */
             var yahoo_conversion_id = 1001260891;
             var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
-            var yahoo_conversion_value = window.Shopify.checkout.subtotal_price;
+            var yahoo_conversion_value = price;
             /* ]]> */
         </script>
         <script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
