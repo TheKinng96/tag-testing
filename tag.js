@@ -1,38 +1,27 @@
 (function () {
   let temp = document.createElement('div')
-  temp.innerHTML = `<!-- AdSIST Tool --><script nonce="xhAsgQqo">
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '392573592583627');
-  fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none" 
-      src="https://www.facebook.com/tr?id=392573592583627&ev=PageView&noscript=1"/>
-</noscript>    <script type="text/javascript">
-  window.addEventListener('load', () => {
-      let nowUrl = location.href;
-      if (nowUrl.match(/products/)) {
-          fbq('track', 'ViewContent', {
-            content_ids: window.ShopifyAnalytics.meta.product.id,
-            content_type: 'product',
-          });
-          let dom = window.document.getElementsByName('add')
-          dom.onclick = fbq('track', 'AddToCart', {
-              content_ids: window.ShopifyAnalytics.meta.product.id,
-              content_type: 'product',
-              currency: 'JPY',
-              value: window.ShopifyAnalytics.meta.product.variants[0].price / 100,
-          })
-      }
-  });
-  </script>`
+  temp.innerHTML = `<script type="text/javascript">
+            window.addEventListener('load', () => {
+                /* <![CDATA[ */
+                var yahoo_conversion_id = 1001260891;
+                var yahoo_conversion_label = "swEjCI_M5doDEJqp5_Io";
+                var yahoo_conversion_value = window.Shopify.checkout.subtotal_price;
+                /* ]]> */
+            });
+        </script>
+        <script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
+        </script>
+        <script>
+            (function () {
+                let img = document.createElement('img')
+                const head = document.head
+                img.src = 'https://b91.yahoo.co.jp/pagead/conversion/1001260891/?value=' + window.Shopify.checkout.subtotal_price + '&label=swEjCI_M5doDEJqp5_Io&guid=ON&script=0&disvt=true'
+                img.width = '1'
+                img.height = '1'
+                img.border = "0"
+                document.getElementsByTagName("head")[0].appendChild(img)
+            })()
+        </script>`
   let head = document.head
   
   Array.prototype.forEach.call(temp.children, function(item) {
