@@ -25,6 +25,7 @@
        },
      }
      
+     console.log(${window.ShopifyAnalytics.meta.page.pageType});
      switch (${window.ShopifyAnalytics.meta.page.pageType}) {
       case 'product':
         details.yahoo_retargeting_page_type = 'detail';
