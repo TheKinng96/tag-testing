@@ -25,7 +25,15 @@
        },
      }
      if (${window.ShopifyAnalytics.meta.page.pageType === 'product'}) {
-         console.log(details)
+        let test = [${window.ShopifyAnalytics.meta.product}].map(item => {
+          return {
+            item_id: item.id,
+            category_id: item.type
+            price: item.variants[0].price / 100
+            quantity: ""
+          }
+        })
+         console.log(test)
          ytag({
            "type": "yjad_retargeting",
            "config": {
@@ -51,7 +59,7 @@
              "yahoo_retargeting_items": [
                {
                    item_id: "${window.ShopifyAnalytics.meta.product.id}",
-                   category_id: "",
+                   category_id: "${window.ShopifyAnalytics.meta.product.type}",
                    price: "${window.ShopifyAnalytics.meta.product.variants[0].price / 100}",
                    quantity: ""
                },
