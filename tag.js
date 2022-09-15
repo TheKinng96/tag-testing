@@ -11,7 +11,11 @@
     <!--End AdSIST YDN sitegeneraltag -->
     <!-- AdSIST YDN CV -->
     <script type="text/javascript" async>
-      console.log(window.Shopify.checkout.order_id);
+      if (window.Shopify.checkout.order_id) {
+        console.log(window.Shopify.checkout.order_id);
+      } else {
+        console.log('not rendered yet');
+      }
       
       window.addEventListener("load", () => {
         ytag({
