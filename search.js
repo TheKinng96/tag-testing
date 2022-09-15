@@ -25,7 +25,7 @@
        },
      }
      if (${window.ShopifyAnalytics.meta.page.pageType === 'product'}) {
-        let test = [${window.ShopifyAnalytics.meta.product}]
+        let test = [${window.ShopifyAnalytics.meta.product}].map(item => {return { id: item.id, category_id: item.type, price: item.variants[0].price / 100, quantity: '' }})
          console.log(test)
          ytag({
            "type": "yjad_retargeting",
