@@ -55,7 +55,7 @@
        ytag(details);
     `;
   
-  let head = document.head;
+  let body = document.body;
   head.appendChild(temp);
   head.appendChild(script);
 })()
