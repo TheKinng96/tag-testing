@@ -45,7 +45,7 @@
  
        console.log(details);
        ytag(details);
-      }
+      
     </script>`
   
   let head = document.head;
