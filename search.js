@@ -19,7 +19,7 @@
              "yahoo_retargeting_items": [
                {
                    item_id: "${window.ShopifyAnalytics.meta.product.id}",
-                   category_id: "${window.ShopifyAnalytics.meta.product.type}",
+                   category_id: "",
                    price: "${window.ShopifyAnalytics.meta.product.variants[0].price / 100}",
                    quantity: ""
                },
