@@ -26,24 +26,22 @@
      }
      
      console.log(${window.ShopifyAnalytics.meta.page.pageType});
-      ${
-  if (window.ShopifyAnalytics.meta.page.pageType === 'product') {
+      if (${window.ShopifyAnalytics.meta.page.pageType === 'product'}) {
         details.yahoo_retargeting_page_type = 'detail';
         details.yahoo_retargeting_items = [{
-          item_id: ${window.ShopifyAnalytics.meta.product.id},
-          category_id: "",
-          price: ${window.ShopifyAnalytics.meta.product.variants[0].price / 100},
+          item_id: ${window.ShopifyAnalytics.meta.product ? window.ShopifyAnalytics.meta.product.id : ''},
+          category_id: ${window.ShopifyAnalytics.meta.product ? window.ShopifyAnalytics.meta.product.type : ''},
+          price: ${window.ShopifyAnalytics.meta.product ? window.ShopifyAnalytics.meta.product.variants[0].price / 100 : ''},
           quantity: ""
         }];
-      } else if (window.ShopifyAnalytics.meta.page.pageType === 'collection') {
+      } else if (${window.ShopifyAnalytics.meta.page.pageType === 'collection'}) {
         details.yahoo_retargeting_page_type = 'category';
-        details.yahoo_retargeting_items = window.ShopifyAnalytics.meta.products.map(item => {return { id: item.id, category_id: item.type, price: item.variants[0].price / 100, quantity: '' }})
-      } else if (window.ShopifyAnalytics.meta.page.pageType === 'searchresults') {
+        details.yahoo_retargeting_items = ${window.ShopifyAnalytics.meta.products ? window.ShopifyAnalytics.meta.products.map(item => {return { id: item.id, category_id: item.type, price: item.variants[0].price / 100, quantity: '' }}) : []}
+      } else if (${window.ShopifyAnalytics.meta.page.pageType === 'searchresults'}) {
         details.yahoo_retargeting_page_type = 'search';
       } else {
         details.yahoo_retargeting_page_type = 'home';
       }
-}
  
        console.log(details);
        ytag(details);
