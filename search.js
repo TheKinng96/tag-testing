@@ -8,7 +8,7 @@
       function ytag() { yjDataLayer.push(arguments); }
       ytag({"type":"ycl_cookie"});
 
-       if (${window.ShopifyAnalytics.meta.page.pageType} === 'product') {
+       if (${window.ShopifyAnalytics.meta.page.pageType === 'product'}) {
          console.log('here')
          ytag({
            "type": "yjad_retargeting",
