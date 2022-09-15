@@ -11,7 +11,6 @@
   script.innerHTML = `
     window.yjDataLayer = window.yjDataLayer || [];
     function ytag() { yjDataLayer.push(arguments); }
-      ytag({"type":"ycl_cookie"});
       
       let details = {
        "type": "yjad_retargeting",
