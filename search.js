@@ -57,11 +57,6 @@
     `;
   
   let head = document.head;
+  head.appendChild(temp);
   head.appendChild(script);
-  
-  Array.prototype.forEach.call(temp.children, function(item) {
-      let element = document.createElement(item.tagName);
-      element.innerHTML = item.innerHTML;
-      document.getElementsByTagName( "head" )[0].appendChild(element);
-  });
 })()
