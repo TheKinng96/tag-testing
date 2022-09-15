@@ -21,7 +21,7 @@
       };
 
       let yahooCurrentUrl = location.href;
-      console.log(yahooCurrentUrl);
+      console.log(yahooCurrentUrl, yahooCurrentUrl.match(/products/));
       if (yahooCurrentUrl.match(/products/)) {
           retargetingDetail.config.yahoo_retargeting_page_type = 'detail'
           retargetingDetail.config.yahoo_retargeting_items = [
