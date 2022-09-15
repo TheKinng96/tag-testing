@@ -7,41 +7,43 @@
 
       function ytag() { yjDataLayer.push(arguments); }
       ytag({"type":"ycl_cookie"});
-
-      let retargetingDetail = {
-        "type":"yjad_retargeting",
-        "config":{
-          "yahoo_retargeting_id": "8YRDX0ZJLS",
-          "yahoo_retargeting_label": "",
-          "yahoo_retargeting_page_type": "",
-          "yahoo_retargeting_items":[
-            {item_id: '', category_id: '', price: '', quantity: ''}
-          ]
-        }
-      };
-
-      let currentPage = location.href;
-      if (currentPage.match(/products/)) {
-          retargetingDetail.config.yahoo_retargeting_page_type = 'detail'
-          retargetingDetail.config.yahoo_retargeting_items = [
-              {
-                  item_id: ${window.ShopifyAnalytics.meta.product.id},
-                  category_id: '',
-                  price: ${window.ShopifyAnalytics.meta.product.variants[0].price / 100},
-                  quantity: ''
-              }
-          ]
-      } else if (currentPage.match(/collections/)) {
-          targetingObject.config.yahoo_retargeting_page_type = 'category'
-      } else if (currentPage.match(/cart/)) {
-          targetingObject.config.yahoo_retargeting_page_type = 'cart'
-      } else if (currentPage.match(/search/)) {
-          targetingObject.config.yahoo_retargeting_page_type = 'search'
-      } else {
-          targetingObject.config.yahoo_retargeting_page_type = 'home'
-      }
       
-      ytag(${retargetingDetail});
+      ${
+        let retargetingDetail = {
+          "type":"yjad_retargeting",
+          "config":{
+            "yahoo_retargeting_id": "8YRDX0ZJLS",
+            "yahoo_retargeting_label": "",
+            "yahoo_retargeting_page_type": "",
+            "yahoo_retargeting_items":[
+              {item_id: '', category_id: '', price: '', quantity: ''}
+            ]
+          }
+        };
+
+        let currentPage = location.href;
+        if (window.ShopifyAnalytics.meta.page.pageType === 'product') {
+            retargetingDetail.config.yahoo_retargeting_page_type = 'detail'
+            retargetingDetail.config.yahoo_retargeting_items = [
+                {
+                    item_id: window.ShopifyAnalytics.meta.product.id,
+                    category_id: window.ShopifyAnalytics.meta.product.type,
+                    price: window.ShopifyAnalytics.meta.product.variants[0].price / 100,
+                    quantity: ""
+                }
+            ]
+        } else if (window.ShopifyAnalytics.meta.page.pageType === 'collection') {
+            targetingObject.config.yahoo_retargeting_page_type = 'category'
+        } else if (window.ShopifyAnalytics.meta.page.pageType === 'cart') {
+            targetingObject.config.yahoo_retargeting_page_type = 'cart'
+        } else if (window.ShopifyAnalytics.meta.page.pageType === 'searchresults') {
+            targetingObject.config.yahoo_retargeting_page_type = 'search'
+        } else {
+            targetingObject.config.yahoo_retargeting_page_type = 'home'
+        }
+
+        ytag(retargetingDetail);
+      }
       
     </script>`
   
