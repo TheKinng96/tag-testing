@@ -6,7 +6,6 @@
       window.yjDataLayer = window.yjDataLayer || [];
 
       function ytag() { yjDataLayer.push(arguments); }
-      ytag({"type":"ycl_cookie"});
 
       let retargetingDetail = {
         "type":"yjad_retargeting",
@@ -21,7 +20,6 @@
       };
 
       let currentPage = location.href;
-      console.log(currentPage, currentPage.match(/products/));
       if (currentPage.match(/products/)) {
           retargetingDetail.config.yahoo_retargeting_page_type = 'detail'
           retargetingDetail.config.yahoo_retargeting_items = [
@@ -41,8 +39,10 @@
       } else {
           targetingObject.config.yahoo_retargeting_page_type = 'home'
       }
-
+      
+      console.log(retargetingDetail);
       ytag(retargetingDetail);
+      ytag({"type":"ycl_cookie"});
     </script>`
   
   let head = document.head
