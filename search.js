@@ -3,7 +3,7 @@
   temp.innerHTML = `<script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>`
   let script = document.createElement('script');
   script.setAttribute('defer', '');
-  script.onload = function handleScriptLoaded() {
+  script.innerHTML = `
     window.yjDataLayer = window.yjDataLayer || [];
 
       function ytag() { yjDataLayer.push(arguments); }
@@ -46,8 +46,7 @@
  
        console.log(details);
        ytag(details);
-      
-  };
+`
   
   let head = document.head;
   head.appendChild(script);
