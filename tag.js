@@ -11,25 +11,25 @@
     <!--End AdSIST YDN sitegeneraltag -->
     <!-- AdSIST YDN CV -->
     <script type="text/javascript" async>
+      console.log(window.Shopify.checkout.order_id);
         ytag({
             "type": "yjad_conversion",
             "config": {
                 "yahoo_ydn_conv_io": "pSdR8AllEdJ4IZpJ-9SwEQ..",
                 "yahoo_ydn_conv_label": "HZH40WFQ3MPMFTU9VN4926987",
-                "yahoo_ydn_conv_transaction_id": "1324",
-                "yahoo_ydn_conv_value": "0"
+                "yahoo_ydn_conv_transaction_id": window.Shopify.checkout.order_id,
+                "yahoo_ydn_conv_value": window.Shopify.checkout.subtotal_price.toString()
             }
         });
-    </script>
-    <script async>
-    ytag({
-      "type": "yss_conversion",
-      "config": {
-        "yahoo_conversion_id": "1001259409",
-        "yahoo_conversion_label": "lEJMCLn98dgDEOOcq-8o",
-        "yahoo_conversion_value": "0"
-      }
-    });
+
+        ytag({
+          "type": "yss_conversion",
+          "config": {
+            "yahoo_conversion_id": "1001259409",
+            "yahoo_conversion_label": "lEJMCLn98dgDEOOcq-8o",
+            "yahoo_conversion_value": window.Shopify.checkout.subtotal_price.toString()
+          }
+        });
     </script>`
   let head = document.head
   
