@@ -10,8 +10,7 @@
     </script>
     <!--End AdSIST YDN sitegeneraltag -->
     <!-- AdSIST YDN CV -->
-    <script type="text/javascript" async>      
-      setTimeout(() => {
+    <script type="text/javascript" defer>      
       console.log('fired');
       
         ytag({
@@ -32,8 +31,31 @@
             "yahoo_conversion_value": "window.Shopify.checkout.subtotal_price.toString()"
           }
         });
-      }, 1000);
     </script>`
+  let script = document.createElement('script');
+  script.setAttribute('defer', '');
+  script.onload = function handleScriptLoaded() {
+    console.log('script has loaded');
+    ytag({
+        "type": "yjad_conversion",
+        "config": {
+            "yahoo_ydn_conv_io": "pSdR8AllEdJ4IZpJ-9SwEQ..",
+            "yahoo_ydn_conv_label": "HZH40WFQ3MPMFTU9VN4926987",
+            "yahoo_ydn_conv_transaction_id": window.Shopify.checkout.order_id.toString(),
+            "yahoo_ydn_conv_value": window.Shopify.checkout.subtotal_price.toString()
+        }
+    });
+
+    ytag({
+      "type": "yss_conversion",
+      "config": {
+        "yahoo_conversion_id": "1001259409",
+        "yahoo_conversion_label": "lEJMCLn98dgDEOOcq-8o",
+        "yahoo_conversion_value": window.Shopify.checkout.subtotal_price.toString()
+      }
+    });
+  };
+  
   let head = document.head
   
   Array.prototype.forEach.call(temp.children, function(item) {
