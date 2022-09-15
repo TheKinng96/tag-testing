@@ -9,6 +9,8 @@
       ytag({"type":"ycl_cookie"});
       
       ${
+        console.log('hi there')
+        }
         let retargetingDetail = {
           "type":"yjad_retargeting",
           "config":{
@@ -43,7 +45,6 @@
         }
 
         ytag(retargetingDetail);
-      }
       
     </script>`
   
