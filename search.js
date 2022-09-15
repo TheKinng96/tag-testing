@@ -18,6 +18,38 @@
              "yahoo_retargeting_page_type": 'detail',
              "yahoo_retargeting_items": [
                {
+                   item_id: "1234",
+                   category_id: "1234",
+                   price: "1234",
+                   quantity: ""
+               },
+             ],
+           },
+         });
+         ytag({
+           "type": "yjad_retargeting",
+           "config": {
+             "yahoo_retargeting_id": "8YRDX0ZJLS",
+             "yahoo_retargeting_label": "",
+             "yahoo_retargeting_page_type": 'detail',
+             "yahoo_retargeting_items": [
+               {
+                   item_id: ${window.ShopifyAnalytics.meta.product.id},
+                   category_id: "",
+                   price: ${window.ShopifyAnalytics.meta.product.variants[0].price / 100},
+                   quantity: ""
+               },
+             ],
+           },
+         });
+         ytag({
+           "type": "yjad_retargeting",
+           "config": {
+             "yahoo_retargeting_id": "8YRDX0ZJLS",
+             "yahoo_retargeting_label": "",
+             "yahoo_retargeting_page_type": 'detail',
+             "yahoo_retargeting_items": [
+               {
                    item_id: "${window.ShopifyAnalytics.meta.product.id}",
                    category_id: "",
                    price: "${window.ShopifyAnalytics.meta.product.variants[0].price / 100}",
