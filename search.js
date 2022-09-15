@@ -56,6 +56,6 @@
     `;
   
   let body = document.body;
-  head.appendChild(temp);
-  head.appendChild(script);
+  body.appendChild(temp);
+  body.appendChild(script);
 })()
