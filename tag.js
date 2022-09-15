@@ -10,14 +10,9 @@
     </script>
     <!--End AdSIST YDN sitegeneraltag -->
     <!-- AdSIST YDN CV -->
-    <script type="text/javascript" async>
-      if (window.Shopify.checkout.order_id) {
-        console.log(window.Shopify.checkout.order_id);
-      } else {
-        console.log('not rendered yet');
-      }
-      
-      window.addEventListener("load", () => {
+    <script type="text/javascript" async>      
+      setTimeout(() => {
+      console.log('fired');
         ytag({
             "type": "yjad_conversion",
             "config": {
@@ -36,7 +31,7 @@
             "yahoo_conversion_value": window.Shopify.checkout.subtotal_price.toString()
           }
         });
-      });
+      }, 1000);
     </script>`
   let head = document.head
   
