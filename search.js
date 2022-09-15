@@ -20,9 +20,9 @@
         }
       };
 
-      let yahooCurrentUrl = location.href;
-      console.log(yahooCurrentUrl, yahooCurrentUrl.match(/products/));
-      if (yahooCurrentUrl.match(/products/)) {
+      let currentPage = location.href;
+      console.log(currentPage, currentPage.match(/products/));
+      if (currentPage.match(/products/)) {
           retargetingDetail.config.yahoo_retargeting_page_type = 'detail'
           retargetingDetail.config.yahoo_retargeting_items = [
               {
@@ -32,11 +32,11 @@
                   quantity: ''
               }
           ]
-      } else if (yahooCurrentUrl.match(/collections/)) {
+      } else if (currentPage.match(/collections/)) {
           targetingObject.config.yahoo_retargeting_page_type = 'category'
-      } else if (yahooCurrentUrl.match(/cart/)) {
+      } else if (currentPage.match(/cart/)) {
           targetingObject.config.yahoo_retargeting_page_type = 'cart'
-      } else if (yahooCurrentUrl.match(/search/)) {
+      } else if (currentPage.match(/search/)) {
           targetingObject.config.yahoo_retargeting_page_type = 'search'
       } else {
           targetingObject.config.yahoo_retargeting_page_type = 'home'
