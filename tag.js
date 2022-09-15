@@ -12,6 +12,8 @@
     <!-- AdSIST YDN CV -->
     <script type="text/javascript" async>
       console.log(window.Shopify.checkout.order_id);
+      
+      window.addEventListener("load", () => {
         ytag({
             "type": "yjad_conversion",
             "config": {
@@ -30,6 +32,7 @@
             "yahoo_conversion_value": window.Shopify.checkout.subtotal_price.toString()
           }
         });
+      });
     </script>`
   let head = document.head
   
