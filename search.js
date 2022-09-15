@@ -20,6 +20,7 @@
             ]
           }
         };
+        }
 
         let currentPage = location.href;
         if (window.ShopifyAnalytics.meta.page.pageType === 'product') {
@@ -43,7 +44,6 @@
         }
 
         ytag(retargetingDetail);
-      }
     </script>`
   
   let head = document.head
