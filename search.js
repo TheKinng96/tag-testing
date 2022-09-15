@@ -16,16 +16,16 @@
          "yahoo_retargeting_page_type": "detail",
          "yahoo_retargeting_items": [
            {
-               item_id: "${window.ShopifyAnalytics.meta.product.id}",
-               category_id: "${window.ShopifyAnalytics.meta.product.type}",
-               price: "${window.ShopifyAnalytics.meta.product.variants[0].price / 100}",
+               item_id: "",
+               category_id: "",
+               price: "",
                quantity: ""
            },
          ],
        },
      }
      if (${window.ShopifyAnalytics.meta.page.pageType === 'product'}) {
-        let test = [${window.ShopifyAnalytics.meta.product}].map(item => {return { id: item.id, category_id: item.type, price: item.variants[0].price / 100, quantity: '' }})
+        let test = ${[window.ShopifyAnalytics.meta.product].map(item => {return { id: item.id, category_id: item.type, price: item.variants[0].price / 100, quantity: '' }})}
          console.log(test)
          ytag({
            "type": "yjad_retargeting",
