@@ -6,6 +6,7 @@
       window.yjDataLayer = window.yjDataLayer || [];
 
       function ytag() { yjDataLayer.push(arguments); }
+      ytag({"type":"ycl_cookie"});
 
       let retargetingDetail = {
         "type":"yjad_retargeting",
@@ -40,19 +41,8 @@
           targetingObject.config.yahoo_retargeting_page_type = 'home'
       }
       
-      console.log(retargetingDetail);
-      ytag({
-        "type":"yjad_retargeting",
-        "config":{
-          "yahoo_retargeting_id": "8YRDX0ZJLS",
-          "yahoo_retargeting_label": "",
-          "yahoo_retargeting_page_type": "home",
-          "yahoo_retargeting_items":[
-            {item_id: '1234', category_id: '1234', price: '1234', quantity: ''}
-          ]
-        }
-      });
-      ytag({"type":"ycl_cookie"});
+      ytag(${retargetingDetail});
+      
     </script>`
   
   let head = document.head
